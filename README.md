@@ -14,7 +14,3 @@ yarn install
 # Dev
 yarn dev
 
-# Production
-yarn build
-yarn start
-```

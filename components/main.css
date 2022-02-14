@@ -1,0 +1,338 @@
+h3,
+h4,
+h5,
+span,
+p {
+  color: rgba(255, 255, 255, 0.65);
+  /* font-family: 'Roboto', sans-serif; */
+}
+h1,
+h2 {
+  color: #fff;
+}
+button > span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+button.ink_price > span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+}
+.main_card {
+  border-radius: 8px;
+}
+.main_card .ant-card-body {
+  border-radius: 8px;
+}
+.main_card.main_cover .ant-card-body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.main_card .ant-card-head {
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.main_about {
+  height: 300px;
+}
+span.comic_tag {
+  background: #141414;
+  border: 1px solid #434343;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.65);
+}
+.main_card ul.ant-card-actions {
+  background-color: #141414;
+  border-top: 0px solid #141414;
+}
+.card_promotion .ant-card-body {
+  background: #1f1f1f !important;
+}
+.main_card {
+  background: #141414;
+}
+.main_card .ant-card-body,
+.main_card .ant-card-head {
+  background: #141414;
+}
+.main_card .ant-card-head .ant-card-head-wrapper .ant-card-head-title {
+  color: rgba(255, 255, 255, 0.65);
+}
+.ant-list-item-meta-content {
+  /* padding: 18px; */
+}
+.ink_chapter.ant-list-split .ant-list-item {
+  border-bottom: 1px solid #141414;
+}
+textarea.ant-input-sm {
+  background: #141414;
+  border: 1px solid #434343;
+  color: #fff;
+}
+p.chat_content_inkr {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+.comment_inkr
+  > .ant-comment-inner
+  > .ant-comment-content
+  > .ant-comment-content-author
+  > span {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+}
+.credit__item.ant-list-item {
+  border-bottom: none;
+}
+.main_info .ant-card-head {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.main_info .ant-card-body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+h4.about_chap {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #fff;
+}
+h2.title_cover {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 0px;
+}
+span.survey_content {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+span.ant-tag.comic_tag {
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+}
+.title__content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+}
+h5.about_sys {
+  margin-bottom: 0px;
+}
+.about_sys {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffffd9;
+}
+.sys_content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+.credit_content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+}
+span.fact_title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}
+span.fact_content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+h5.price_ink {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.price_type {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}
+h5.price_content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.coin_content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}
+button.ink_price > span {
+  margin-left: 5px;
+}
+span.discount span.ant-input-group span.ant-input-group-addon {
+  background: #651fff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid #651fff;
+}
+span.discount span.ant-input-group input.ant-input {
+  height: 34px;
+  width: 65px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0px 8px 8px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: Roboto;
+  font-weight: 500;
+  color: #fff;
+  font-size: 18px;
+}
+.price_content.extra {
+  color: #a379ff;
+  margin-bottom: 0px;
+}
+.card_promotion {
+  height: 78px;
+}
+.card_promotion .ant-card-body {
+  height: 78px;
+  padding-top: 15px;
+}
+.card_promotion .ant-card-body .ant-list-item {
+  padding-top: 0px;
+}
+.main_comment .ant-card-body {
+  padding: 0 15px;
+}
+.showLess .ant-card-actions li {
+  width: 100%;
+  margin: -6px 0;
+}
+.main_about .ant-card-actions li {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+h4.related_suggest {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+}
+h5.title_suggest {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0px;
+}
+p.ink_prequel {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0px;
+}
+p.ink_view {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}
+.suggest_card .ant-card-head .ant-card-head-wrapper .ant-card-head-title {
+  padding-top: 10px;
+  padding-bottom: 9px;
+}
+.suggest_card .ant-card-body {
+  padding: 2px;
+}
+li.ant-list-item.suggest__list__item {
+  padding: 2px;
+}
+li.ant-list-item.suggest__list__item
+  .ant-list-item-meta
+  .ant-list-item-meta-content {
+  padding-top: 10px;
+}
+h5.notyChapter {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  /* margin-bottom: 0px; */
+}
+.notyChapter__content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.65);
+}
+button.display {
+  display: none;
+}
+@media only screen and (max-width: 1000px) {
+  h5.price_type {
+    font-size: 12px;
+  }
+}
+button.ink_primary,
+button.ink_primary:focus,
+button.ink_primary:hover {
+  background: #ffd60a;
+  border-radius: 8px;
+  border-color: #ffd60a;
+}
+button.ink_primary span {
+  color: #000000;
+}
+button.ink_price span {
+  color: #ffffff;
+}
+button.ink_price,
+button.ink_price:focus,
+button.ink_price:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border-color: rgba(255, 255, 255, 0.08);
+}

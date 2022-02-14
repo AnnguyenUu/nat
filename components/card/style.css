@@ -1,0 +1,11 @@
+.main_card .ant-card-body,
+.main_card .ant-card-head {
+  background: #141414;
+}
+.main_card .ant-card-head .ant-card-head-wrapper .ant-card-head-title {
+  color: rgba(255, 255, 255, 0.65);;
+}
+.main_card {
+  /* min-height: 100%; */
+  background: #141414;
+}

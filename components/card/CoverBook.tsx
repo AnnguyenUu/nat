@@ -17,7 +17,7 @@ const CoverBook: React.FC<CoverProps> = () => {
   return (
     <InkCard className="main_cover">
       <Row>
-        <Col lg={{ span: 24 }} xl={{ span: 24 }} xxl={{ span: 24 }}>
+        <Col lg={{ span: 24 }} xl={{ span: 24 }} xxl={{ span: 24 }} md={{ span: 24 }}>
           <List
             itemLayout="horizontal"
             dataSource={mainCover}

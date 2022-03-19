@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 // components
 import { Row, Col, notification } from 'antd';
 import CoverBook from '../components/card/CoverBook';
@@ -22,12 +22,21 @@ import { Comment, Chap } from '../utils/types';
 import useWindowDimensions from '../components/Hook/useWindowDimensions';
 import QRInfo from '../components/qr';
 import { notifySuccess } from '../components/notify';
+// import fetch from 'node-fetch';
+import { useQuery } from 'react-query';
+import axios from 'axios';
 
 const TitleInfo = () => {
   const [comments, setCmt] = React.useState([]);
   const sysRef = React.useRef(null);
   const [chapter, setChapter] = React.useState<Chap[]>(CHAP_DATA);
   const { width } = useWindowDimensions();
+  const url = 'https://bwsdev.ntx.com.vn/v1/province'
+  const fetchData = useCallback(async () => {
+    const response = await axios.get(url);
+    return response.data
+  }, []);
+  const { status, data, error } = useQuery(['todos'], fetchData);
 
   const onAddComment = (v: Comment): void => {
     const clone = [...comments];

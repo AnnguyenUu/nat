@@ -31,12 +31,6 @@ const TitleInfo = () => {
   const sysRef = React.useRef(null);
   const [chapter, setChapter] = React.useState<Chap[]>(CHAP_DATA);
   const { width } = useWindowDimensions();
-  const url = 'https://bwsdev.ntx.com.vn/v1/province'
-  const fetchData = useCallback(async () => {
-    const response = await axios.get(url);
-    return response.data
-  }, []);
-  const { status, data, error } = useQuery(['todos'], fetchData);
 
   const onAddComment = (v: Comment): void => {
     const clone = [...comments];
@@ -46,6 +40,7 @@ const TitleInfo = () => {
     });
     setCmt(clone);
   };
+
   const onPayment = React.useCallback((): void => {
     const cloneChap = [...chapter];
     const newChap = cloneChap.reduce((acc: Chap[], i: Chap) => {
@@ -56,13 +51,16 @@ const TitleInfo = () => {
     setChapter(newChap);
     notifySuccess('Pay Fee successfully');
   }, [chapter]);
+
   const onRegister = React.useCallback((): void => {
     notifySuccess('Register successfully');
   }, []);
+
   const onShare = React.useCallback((): void => {
     notification.success({
       message: 'Share chapter successfully',
     });
+    
   }, []);
   return (
     <ComicContext.Provider

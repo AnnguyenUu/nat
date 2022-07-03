@@ -22,10 +22,6 @@ import { Comment, Chap } from '../utils/types';
 import useWindowDimensions from '../components/Hook/useWindowDimensions';
 import QRInfo from '../components/qr';
 import { notifySuccess } from '../components/notify';
-// import fetch from 'node-fetch';
-import { useQuery } from 'react-query';
-import axios from 'axios';
-
 const TitleInfo = () => {
   const [comments, setCmt] = React.useState([]);
   const sysRef = React.useRef(null);
@@ -40,6 +36,24 @@ const TitleInfo = () => {
     });
     setCmt(clone);
   };
+// Promise // pending, resolve, reject
+  const USER = ["An", "Dung", "Trung"]
+
+  const fechInfoUser = async(user) => {
+    const fetch = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(console.log(user))
+      }, 250);
+    });
+    // Promise.all
+    // Promise.allSettled
+
+    const list = await fetch
+  }
+
+  useEffect(() => {
+    fechInfoUser(USER)
+  }, [])
 
   const onPayment = React.useCallback((): void => {
     const cloneChap = [...chapter];

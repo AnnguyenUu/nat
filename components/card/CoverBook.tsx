@@ -11,9 +11,17 @@ import { ComicContext } from '../context/Comic';
 // utils
 import { formatNumber } from '../../utils';
 
-interface CoverProps {}
+interface CoverProps { }
 const CoverBook: React.FC<CoverProps> = () => {
   const { mainCover, onReadDemo, onShare } = React.useContext(ComicContext);
+  const comic = {
+    title: "Alita Battle",
+    content: "A male robot"
+  };
+
+  function logInfoChapter(greeting1, greeting2) {
+    console.log(`${greeting1} ${greeting2}, ${this.title} - ${this.content}`)
+  }
   return (
     <InkCard className="main_cover">
       <Row>
@@ -24,7 +32,19 @@ const CoverBook: React.FC<CoverProps> = () => {
             renderItem={(item) => (
               <List.Item>
                 <List.Item.Meta
-                  avatar={<Image src="/Cover.png" width={180} height={271} />}
+                  avatar={
+                    <div onClick={() => {
+                      const newFunc = logInfoChapter.bind(comic, 
+                        "And finally with bubbling event this is a",
+                        "bind method");
+                      newFunc();
+                    }}>
+                      <Image onClick={() => {
+                        logInfoChapter.call(comic, "this is a", "call method");
+                        logInfoChapter.apply(comic, ["This is an", "apply method"]);
+                      }} src="/Cover.png" width={180} height={271} />
+                    </div>
+                  }
                   title={
                     <Row>
                       <Col

@@ -36,24 +36,6 @@ const TitleInfo = () => {
     });
     setCmt(clone);
   };
-// Promise // pending, resolve, reject
-  const USER = ["An", "Dung", "Trung"]
-
-  const fechInfoUser = async(user) => {
-    const fetch = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(console.log(user))
-      }, 250);
-    });
-    // Promise.all
-    // Promise.allSettled
-
-    const list = await fetch
-  }
-
-  useEffect(() => {
-    fechInfoUser(USER)
-  }, [])
 
   const onPayment = React.useCallback((): void => {
     const cloneChap = [...chapter];

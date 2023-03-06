@@ -16,7 +16,7 @@ const CoverBook: React.FC<CoverProps> = () => {
   const { mainCover, onReadDemo, onShare } = React.useContext(ComicContext);
   const comic = {
     title: "Alita Battle",
-    content: "A male robot"
+    content: "A male robot" 
   };
 
   function logInfoChapter(greeting1, greeting2) {

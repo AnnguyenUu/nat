@@ -1,5 +1,7 @@
 import { css } from "@emotion/css";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { BearState, useBearStore } from "../../hooks/useBearStore";
+import { useRouter } from "next/router";
 
 type Fn = () => void;
 const INITIAL_COUNT = 120;
@@ -9,17 +11,20 @@ const DIMINUTION = 1;
 
 enum STATUS {
     STARTED = "started",
-    STOPPED = "stopped"
+    STOPPED = "stopped",
+    RESET = "reset"
 };
 
 const STATUS_MAP: Record<STATUS, string> = {
     [STATUS.STARTED]: "Paused",
-    [STATUS.STOPPED]: "Play"
+    [STATUS.STOPPED]: "Play",
+    [STATUS.RESET]: "Reset"
 }
 
 const DEPLAY_TIME: Record<STATUS, number | null> = {
     [STATUS.STARTED]: MILLISECOND,
-    [STATUS.STOPPED]: null
+    [STATUS.STOPPED]: null,
+    [STATUS.RESET]: null
 };
 
 const pluralize = (text, count) => {
@@ -33,10 +38,7 @@ export const Timer = () => {
     const [timeToCount, setTime] = useState<number>(INITIAL_COUNT);
     const [status, setStatus] = useState<STATUS>(STATUS.STOPPED);
     const [count, setC] = useState<number>(0);
-
-    console.log({
-        count
-    })
+    const { bears, increase } = useBearStore((state: BearState) => state)
 
     const secondsToDisplay = timeToCount % TIME_METRE;
     const minutesRemaining = (timeToCount - secondsToDisplay) / TIME_METRE;
@@ -65,14 +67,6 @@ export const Timer = () => {
         [],
     );
 
-    const onAction = useCallback((st: STATUS) => {
-        const action = {
-            [STATUS.STARTED]: onStop,
-            [STATUS.STOPPED]: onStart
-        }
-        return action[st]();
-    }, []);
-
     const onReset = useCallback(
         () => {
             setTime(INITIAL_COUNT)
@@ -81,8 +75,28 @@ export const Timer = () => {
         [],
     );
 
-    return <div className={dd}>
-        "Tôi không nghĩ cái ngành của chúng tôi lại bê bết như thế này, nghĩ tới cũng thấy rất áy náy", ông Hoàng Trung Liêm, cán bộ được Cục Đăng kiểm biệt phái xuống điều hành trạm 29-06V, chia sẻ. Ông Liêm cho biết dù đã huy động cả những người đã bị khởi tố, trung tâm vẫn thiếu hụt 50% nhân lực.
+    const onAction = useCallback((st: STATUS) => {
+        const action = {
+            [STATUS.STARTED]: onStop,
+            [STATUS.STOPPED]: onStart,
+            [STATUS.RESET]: onReset,
+        }
+        return action[st]();
+    }, []);
+
+    const { push } = useRouter();
+
+    return <div className={sectionCss}>
+        <h1>{bears} around here ...</h1>
+        <span>{showDisplayTime(hoursToDisplay)}</span>
+        <span>{showDisplayTime(minutesToDisplay)}</span>
+        <div className={groupButtonCss}>
+            <button onClick={() => onAction(STATUS.STARTED)}>{STATUS_MAP[STATUS.STARTED]}</button>
+            <button onClick={() => onAction(STATUS.STOPPED)}>{STATUS_MAP[STATUS.STOPPED]}</button>
+            <button onClick={() => onAction(STATUS.RESET)}>{STATUS_MAP[STATUS.RESET]}</button>
+            <button onClick={() => increase(1)}>Remove</button>
+            <button onClick={() => push("/title")}>Direct</button>
+        </div>
     </div>
 }
 
@@ -124,14 +138,4 @@ const frameCss = css`
     gap: 16px;
     width: 100%;
     align-items: center
-`
-const test = css`
-    display: inline
-`
-const dd =css`
- -webkit-column-count: 5;
- -webket-column-rule-color: lightgreen;
- font-style: italic;
- background-color: lightyellow;
- -webkit-column-gap: 50px
 `

@@ -22,6 +22,7 @@ import { Comment, Chap } from '../utils/types';
 import useWindowDimensions from '../components/Hook/useWindowDimensions';
 import QRInfo from '../components/qr';
 import { notifySuccess } from '../components/notify';
+import { BearState, useBearStore } from '../hooks/useBearStore';
 const TitleInfo = () => {
   const [comments, setCmt] = React.useState([]);
   const sysRef = React.useRef(null);
@@ -58,6 +59,10 @@ const TitleInfo = () => {
     });
     
   }, []);
+
+
+  const { bears } = useBearStore((state: BearState) => state);
+
   return (
     <ComicContext.Provider
       value={{
@@ -75,6 +80,7 @@ const TitleInfo = () => {
       }}
     >
       <Row gutter={width > 1_600 ? [24, 24] : [32, 32]}>
+        {bears}
         {' '}
         {/* gutter will change if width above 1600px */}
         <Col lg={{ span: 15 }} xl={{ span: 16 }} xxl={{ span: 16 }}>
